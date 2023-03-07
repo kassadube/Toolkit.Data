@@ -14,7 +14,8 @@ public class TestRepository: BaseRepository
 {
 
     private const string SQL_GET_ACCOUNT_USERS = "Fleet.dbo.spGetUsers";
-    
+    private const string SQL_GET_ACCOUNT_DETAILS = "Select * from AccountDetails where Id = @AccountId";
+
 
     public TestRepository(IConfiguration configuration, ILogger<TestRepository> logger) : base(configuration, logger)
     {
@@ -33,5 +34,12 @@ public class TestRepository: BaseRepository
         }
         return res;
     }
+    public  BaseResultInfo GetAccountDetails(BaseREQ req)
+    {
+        DataResultInfo<AccountInfo> result = new DataResultInfo<AccountInfo>();
+        result.ResultObject = base.GetTableItem<AccountInfo>(SQL_GET_ACCOUNT_DETAILS, new { AccountId = req.AccountId });
+        return result;
+    }
+
 
 }

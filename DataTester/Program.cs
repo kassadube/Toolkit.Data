@@ -8,6 +8,7 @@ using Toolkit.Model;
 Console.WriteLine("Hello, World!");
 DataTesterRun.Init();
 DataTesterRun.GetAccountUsers(4326);
+DataTesterRun.GetAccountDetailes(4326);
 Console.ReadKey();
 class DataTesterRun
 { 
@@ -33,6 +34,16 @@ class DataTesterRun
         var rep = _serviceProvider.GetRequiredService<TestRepository>();
         BaseREQ req = new BaseREQ() { AccountId = accountId };
         var res = rep.GetAccountUsers(req);
+       
+        Console.WriteLine(res.IsSucceded);
+    }
+
+    public static void GetAccountDetailes(int accountId)
+    {
+        var rep = _serviceProvider.GetRequiredService<TestRepository>();
+        BaseREQ req = new BaseREQ() { AccountId = accountId };
+        var res = rep.GetAccountDetails(req);
+
         Console.WriteLine(res.IsSucceded);
     }
 }
