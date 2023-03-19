@@ -1,10 +1,7 @@
 ﻿using System;
-using DataTester;
-using DataTester.repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
-using Toolkit.Data;
 
 
     public class ConfigureDataServices
@@ -13,10 +10,10 @@ using Toolkit.Data;
         {
 
             var collection = new ServiceCollection()
-                .AddTransient<TestRepository, TestRepository>()               
-                .AddSingleton<RedisService, RedisService>()               
-                .AddSingleton<RedisTester, RedisTester>()               
-                .AddDistributedRedisCache(options => options.Configuration = config["ConnectionStrings:RedisConnection"])
+                //.AddTransient<TestRepository, TestRepository>()               
+                //.AddSingleton<RedisService, RedisService>()               
+               // .AddSingleton<RedisTester, RedisTester>()               
+               // .AddDistributedRedisCache(options => options.Configuration = config["ConnectionStrings:RedisConnection"])
                 .AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(config["ConnectionStrings:RedisConnection"]))                
                 .AddSingleton(config);
             collection.BuildServiceProvider();

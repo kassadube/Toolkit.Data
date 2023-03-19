@@ -3,16 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Data", "Toolkit.Data\Toolkit.Data.csproj", "{85F03733-48F8-471E-A9DF-06E132110D60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Data", "Toolkit.Data\Toolkit.Data.csproj", "{85F03733-48F8-471E-A9DF-06E132110D60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTester", "DataTester\DataTester.csproj", "{034BE41D-D005-4B9D-B7E9-549C7668372F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTester", "DataTester\DataTester.csproj", "{034BE41D-D005-4B9D-B7E9-549C7668372F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Model", "Toolkit.Model\Toolkit.Model.csproj", "{E6ACF496-8CBB-4603-AF6C-0AE3CB2178D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Model", "Toolkit.Model\Toolkit.Model.csproj", "{E6ACF496-8CBB-4603-AF6C-0AE3CB2178D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2EC4237-52ED-4FD8-8F65-1EAE94ABD4E9}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PubSub", "PubSub", "{059FBF0B-AB9A-418C-9F91-677768449AD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherTest", "RedisPubSub\PublisherTest\PublisherTest.csproj", "{CED6C78F-F7F1-4861-8A95-0BDDE131C903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriberTester", "RedisPubSub\SubscriberTester\SubscriberTester.csproj", "{73DE3297-6487-4EB6-BB58-9F8BB0BFB586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Configuration.Helper", "Toolkit.Configuration.Helper\Toolkit.Configuration.Helper.csproj", "{C796D276-A816-4DFA-B544-DA8FD3D2A4BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisQueueStack", "RedisPubSub\RedisQueueStack\RedisQueueStack.csproj", "{9F4996E4-21C7-4DE9-9B16-7E48906D310F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +42,30 @@ Global
 		{E6ACF496-8CBB-4603-AF6C-0AE3CB2178D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6ACF496-8CBB-4603-AF6C-0AE3CB2178D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6ACF496-8CBB-4603-AF6C-0AE3CB2178D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED6C78F-F7F1-4861-8A95-0BDDE131C903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED6C78F-F7F1-4861-8A95-0BDDE131C903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED6C78F-F7F1-4861-8A95-0BDDE131C903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED6C78F-F7F1-4861-8A95-0BDDE131C903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DE3297-6487-4EB6-BB58-9F8BB0BFB586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DE3297-6487-4EB6-BB58-9F8BB0BFB586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DE3297-6487-4EB6-BB58-9F8BB0BFB586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DE3297-6487-4EB6-BB58-9F8BB0BFB586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C796D276-A816-4DFA-B544-DA8FD3D2A4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C796D276-A816-4DFA-B544-DA8FD3D2A4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C796D276-A816-4DFA-B544-DA8FD3D2A4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C796D276-A816-4DFA-B544-DA8FD3D2A4BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4996E4-21C7-4DE9-9B16-7E48906D310F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4996E4-21C7-4DE9-9B16-7E48906D310F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4996E4-21C7-4DE9-9B16-7E48906D310F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4996E4-21C7-4DE9-9B16-7E48906D310F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CED6C78F-F7F1-4861-8A95-0BDDE131C903} = {059FBF0B-AB9A-418C-9F91-677768449AD9}
+		{73DE3297-6487-4EB6-BB58-9F8BB0BFB586} = {059FBF0B-AB9A-418C-9F91-677768449AD9}
+		{9F4996E4-21C7-4DE9-9B16-7E48906D310F} = {059FBF0B-AB9A-418C-9F91-677768449AD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDD3F0A-E5EE-4CCF-B77B-5A4F0E90AD6D}
